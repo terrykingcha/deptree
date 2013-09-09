@@ -1,0 +1,20 @@
+{
+    "name" : "serialize-deptree",
+    "version" : "0.0.1",
+    "description" : "serialize a dependency tree",
+    "author" : "zhuxun <zhuxun.jb@taobao.com>",
+	"keywords": [
+		"dependency",
+		"npm",
+		"serialize"
+	],
+	"engines": {
+		"node": ">= 0.8.1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:terrykingcha/deptree.git"
+	},
+	"main" : "./src/deptree.js",
+	"readme": "序列化依赖树"
+}
