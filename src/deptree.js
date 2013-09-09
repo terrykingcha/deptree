@@ -3,7 +3,7 @@ var util = require('util'),
     VERSION = '0.1.0',
     options = {
       inputFile: '',
-      outputFile: ''
+      outputFile: 'console'
     };
 
 function serialize(deptree) {
@@ -98,17 +98,25 @@ function main(args) {
     if (options.outputFile !== '') {
       fs.writeFileSync(options.outputFile, JSON.stringify(ser));
       util.print('the serialized file "' + options.outputFile  + '" is created');
-    } else {
+    } else if (options.outputFile === 'console') {
       util.print(ser.join(','));
+    } else {
       return ser;
     }
   }
-
-
 }
 
 if (require.main === module) {
   main(process.argv.slice(2));
 } else {
-  module.exports = main;
+  module.exports = {
+    serialize: function(tree, output) {
+      if (typeof tree === 'object') {
+        return main({
+          inputFile: tree,
+          outputFile: output || ''
+        });
+      }
+    }
+  };
 }
