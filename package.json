@@ -1,6 +1,6 @@
 {
     "name" : "serialize-deptree",
-    "version" : "0.0.1",
+    "version" : "0.1.0",
     "description" : "serialize a dependency tree",
     "author" : "zhuxun <zhuxun.jb@taobao.com>",
 	"keywords": [
